@@ -1,6 +1,8 @@
-export const FriendList = ({ friends }) => {
+import css from './FriendList.module.css';
+
+export const FriendList = ({ friends, boxShadow }) => {
   return (
-    <ul className="friend-list">
+    <ul className={css.friend_list + ' ' + boxShadow}>
       {friends.map(({ avatar, name, isOnline, id }) => (
         <li key={id} className="item">
           <span className={`status-is-${isOnline}`}></span>
