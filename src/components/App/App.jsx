@@ -13,10 +13,10 @@ import css from './App.module.css';
 export const App = () => {
   return (
     <div className={css.main}>
-      <Profile user={user} boxShadow={css.general} />
-      <Statistics data={data} boxShadow={css.general} />
-      <FriendList friends={friends} boxShadow={css.general} />
-      <TransactionHistory transactions={transactions} boxShadow={css.general} />
+      <Profile user={user} main={css.general} />
+      <Statistics data={data} main={css.general} />
+      <FriendList friends={friends} main={css.general} />
+      <TransactionHistory transactions={transactions} main={css.general} />
     </div>
   );
 };

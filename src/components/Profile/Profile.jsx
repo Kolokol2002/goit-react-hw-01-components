@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import css from './Profile.module.css';
 
 export const Profile = ({
@@ -8,10 +9,10 @@ export const Profile = ({
     avatar,
     stats: { followers, views, likes },
   },
-  boxShadow,
+  main,
 }) => {
   return (
-    <div className={css.profile + ' ' + boxShadow}>
+    <div className={clsx(css.profile, main)}>
       <div className={css.description}>
         <img src={avatar} alt="User avatar" className={css.avatar} />
         <p className={css.name}>{username}</p>

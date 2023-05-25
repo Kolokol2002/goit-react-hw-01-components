@@ -1,0 +1,33 @@
+.transaction_history {
+  width: 700px;
+  margin-bottom: 40px;
+}
+.thead {
+}
+
+.tr {
+}
+
+.th {
+  background-color: #00bcd5;
+  padding: 10px;
+}
+
+.tbody {
+}
+
+.tr {
+  height: 40px;
+}
+
+.odd {
+  background-color: #ffffff;
+}
+
+.even {
+  background-color: #ecf1f4;
+}
+
+.td {
+  text-align: center;
+}

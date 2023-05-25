@@ -1,22 +1,26 @@
+import clsx from 'clsx';
 import css from './TransactionHistory.module.css';
 
-export const TransactionHistory = ({ transactions, boxShadow }) => {
+export const TransactionHistory = ({ transactions, main }) => {
   return (
-    <table className={css.transaction_history + ' ' + boxShadow}>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+    <table className={clsx(css.transaction_history, main)}>
+      <thead className={css.thead}>
+        <tr className={css.tr}>
+          <th className={css.th}>Type</th>
+          <th className={css.th}>Amount</th>
+          <th className={css.th}>Currency</th>
         </tr>
       </thead>
 
-      <tbody>
-        {transactions.map(({ id, type, amount, currency }) => (
-          <tr key={id}>
-            <td>ddddd{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
+      <tbody className={css.tbody}>
+        {transactions.map(({ id, type, amount, currency }, idx) => (
+          <tr
+            className={clsx(css.tr, css[(idx + 1) % 2 === 0 ? 'even' : 'odd'])}
+            key={id}
+          >
+            <td className={css.td}>{type}</td>
+            <td className={css.td}>{amount}</td>
+            <td className={css.td}>{currency}</td>
           </tr>
         ))}
       </tbody>

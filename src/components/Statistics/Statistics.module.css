@@ -8,6 +8,18 @@
 .stat_list {
   display: flex;
 }
+.id-1 {
+  background-color: #4fc4f9;
+}
+.id-2 {
+  background-color: #a43cf3;
+}
+.id-3 {
+  background-color: #e84b69;
+}
+.id-4 {
+  background-color: #20b8c5;
+}
 .item {
   height: 90px;
   gap: 10px;
