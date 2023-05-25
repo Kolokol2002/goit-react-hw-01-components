@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ data, main }) => {
   return (
@@ -16,4 +17,9 @@ export const Statistics = ({ data, main }) => {
       </ul>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  data: PropTypes.array,
+  main: PropTypes.string,
 };

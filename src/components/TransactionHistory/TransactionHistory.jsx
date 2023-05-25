@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import css from './TransactionHistory.module.css';
+import PropTypes from 'prop-types';
 
 export const TransactionHistory = ({ transactions, main }) => {
   return (
@@ -26,4 +27,9 @@ export const TransactionHistory = ({ transactions, main }) => {
       </tbody>
     </table>
   );
+};
+
+TransactionHistory.propTypes = {
+  transactions: PropTypes.array,
+  main: PropTypes.string,
 };

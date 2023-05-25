@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import css from './FriendList.module.css';
+import PropTypes from 'prop-types';
 
 export const FriendList = ({ friends, main }) => {
   return (
@@ -23,4 +24,9 @@ export const FriendList = ({ friends, main }) => {
       ))}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.array,
+  main: PropTypes.string,
 };

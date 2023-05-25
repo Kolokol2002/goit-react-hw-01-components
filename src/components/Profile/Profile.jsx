@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import css from './Profile.module.css';
+import PropTypes from 'prop-types';
 
 export const Profile = ({
   user: {
@@ -36,4 +37,17 @@ export const Profile = ({
       </ul>
     </div>
   );
+};
+
+Profile.propTypes = {
+  user: PropTypes.object,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object,
+  follower: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
+  main: PropTypes.string,
 };
