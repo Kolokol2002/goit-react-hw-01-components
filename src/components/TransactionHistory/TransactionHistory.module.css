@@ -1,7 +1,12 @@
 .transaction_history {
   width: 700px;
   margin-bottom: 40px;
+  box-shadow: 0px 10px 40px 0px #262626;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
 .thead {
 }
 
@@ -11,6 +16,8 @@
 .th {
   background-color: #00bcd5;
   padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .tbody {

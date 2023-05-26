@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import css from './TransactionHistory.module.css';
 import PropTypes from 'prop-types';
 
-export const TransactionHistory = ({ transactions, main }) => {
+export const TransactionHistory = ({ items }) => {
   return (
-    <table className={clsx(css.transaction_history, main)}>
+    <table className={css.transaction_history}>
       <thead className={css.thead}>
         <tr className={css.tr}>
           <th className={css.th}>Type</th>
@@ -14,7 +14,7 @@ export const TransactionHistory = ({ transactions, main }) => {
       </thead>
 
       <tbody className={css.tbody}>
-        {transactions.map(({ id, type, amount, currency }, idx) => (
+        {items.map(({ id, type, amount, currency }, idx) => (
           <tr
             className={clsx(css.tr, css[(idx + 1) % 2 === 0 ? 'even' : 'odd'])}
             key={id}
@@ -30,6 +30,5 @@ export const TransactionHistory = ({ transactions, main }) => {
 };
 
 TransactionHistory.propTypes = {
-  transactions: PropTypes.array,
-  main: PropTypes.string,
+  items: PropTypes.array.isRequired,
 };

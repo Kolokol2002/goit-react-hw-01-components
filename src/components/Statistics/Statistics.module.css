@@ -1,25 +1,19 @@
 .statistics {
   width: 400px;
+  box-shadow: 0px 10px 40px 0px #262626;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .title {
   text-align: center;
   padding: 30px;
+  text-transform: uppercase;
 }
 .stat_list {
   display: flex;
 }
-.id-1 {
-  background-color: #4fc4f9;
-}
-.id-2 {
-  background-color: #a43cf3;
-}
-.id-3 {
-  background-color: #e84b69;
-}
-.id-4 {
-  background-color: #20b8c5;
-}
+
 .item {
   height: 90px;
   gap: 10px;

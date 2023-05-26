@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import css from './Profile.module.css';
 import PropTypes from 'prop-types';
 
@@ -10,10 +9,9 @@ export const Profile = ({
     avatar,
     stats: { followers, views, likes },
   },
-  main,
 }) => {
   return (
-    <div className={clsx(css.profile, main)}>
+    <div className={css.profile}>
       <div className={css.description}>
         <img src={avatar} alt="User avatar" className={css.avatar} />
         <p className={css.name}>{username}</p>
@@ -40,7 +38,7 @@ export const Profile = ({
 };
 
 Profile.propTypes = {
-  user: PropTypes.object,
+  user: PropTypes.object.isRequired,
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
@@ -49,5 +47,4 @@ Profile.propTypes = {
   follower: PropTypes.number,
   views: PropTypes.number,
   likes: PropTypes.number,
-  main: PropTypes.string,
 };

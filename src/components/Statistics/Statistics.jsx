@@ -1,15 +1,18 @@
-import clsx from 'clsx';
 import css from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
-export const Statistics = ({ data, main }) => {
+export const Statistics = ({ title, stats }) => {
   return (
-    <section className={clsx(css.statistics, main)}>
-      <h2 className={css.title}>Upload stats</h2>
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.stat_list}>
-        {data.map(({ id, label, percentage }) => (
-          <li key={id} className={clsx(css.item, css[id])}>
+        {stats.map(({ id, label, percentage }) => (
+          <li
+            style={{ backgroundColor: getRandomColor() }}
+            key={id}
+            className={css.item}
+          >
             <span className={css.label}>{label}</span>
             <span className={css.percentage}>{percentage}%</span>
           </li>
@@ -20,6 +23,23 @@ export const Statistics = ({ data, main }) => {
 };
 
 Statistics.propTypes = {
-  data: PropTypes.array,
-  main: PropTypes.string,
+  stats: PropTypes.array.isRequired,
+  title: PropTypes.string,
 };
+
+function getRandomColor() {
+  while (true) {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    if (r + g + b > 384) {
+      return (
+        '#' +
+        r.toString(16).padStart(2, '0') +
+        g.toString(16).padStart(2, '0') +
+        b.toString(16).padStart(2, '0')
+      );
+    }
+  }
+}
